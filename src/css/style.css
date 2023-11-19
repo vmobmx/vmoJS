@@ -12,3 +12,8 @@ body {
     z-index: 2;
     background-color: rgb(68, 68, 68);
 }
+
+#box1 {
+    z-index: 2;
+    background-color: rgb(55, 55, 55);
+}

@@ -52,5 +52,16 @@ class Object {
 
     move() {
         this.objectID.style.top = pxToInt(this.objectID.style.top) + this.verticalAcceleration + 'px';
+        this.objectID.style.left = pxToInt(this.objectID.style.left) + this.gorizontalAcceleration + 'px';
+    }
+}
+
+function checkCollision(object1, object2) {
+    console.log(object1.verticalAcceleration);
+    if(pxToInt(object1.objectID.style.top) + pxToInt(object1.objectID.style.height) - pxToInt(object2.objectID.style.top) >= object1.verticalAcceleration) {
+        object1.changeVerticalAcceleration(0);
+    }
+   if(pxToInt(object1.objectID.style.left) + pxToInt(object1.objectID.style.width) -  pxToInt(object2.objectID.style.left) >= object1.gorizontalAcceleration) {  
+        object1.changeGorizontalAcceleration(0);
     }
 }
