@@ -1,3 +1,15 @@
+function pxToInt(value) {
+    let int = 0;
+    let k = 1;
+    for(let i = value.length - 3; i >= 0; i--) {
+        //console.log(value.charAt(i) * k);
+        int += value.charAt(i) * k;
+        k *= 10;
+    }
+    //console.log(int);
+    return int;
+}
+
 class Scene {
     constructor(gravityAcceleration, windage) {
         this.gravityAcceleration = gravityAcceleration;
@@ -30,15 +42,15 @@ class Object {
         this.objectID.style.top = this.y;   
     }
 
-    giveVerticalAcceleration(acceleration) {
-        this.verticalAcceleration += acceleration;
+    changeVerticalAcceleration(acceleration) {
+        this.verticalAcceleration = acceleration;
     }
 
-    giveGorizontalAcceleration(acceleration) {
+    changeGorizontalAcceleration(acceleration) {
         this.gorizontalAcceleration = acceleration;
     }
 
     move() {
-        this.objectID.style.top += this.verticalAcceleration;
+        this.objectID.style.top = pxToInt(this.objectID.style.top) + this.verticalAcceleration + 'px';
     }
 }

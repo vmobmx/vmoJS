@@ -10,10 +10,10 @@ const box = new Object(boxID, true, true, '100px', '100px', '100px', '100px');
 floor.init();
 box.init();
 
-box.giveVerticalAcceleration(5);
+box.changeVerticalAcceleration(10);
 
 // loop
 
 setInterval(() => {
     box.move();
-}, 150);
+}, 10);
